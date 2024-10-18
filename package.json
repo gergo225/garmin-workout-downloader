@@ -1,7 +1,7 @@
 {
-  "name": "garmin-workout-downloader",
+  "name": "garmin-workout-stats",
   "version": "1.0.0",
-  "description": "A browser extension to download strength workout data from Garmin Connect",
+  "description": "A browser extension to view strength workout data and statistics from Garmin Connect",
   "scripts": {
     "test": "echo \"Error: no tests implemented yet\" && exit 1",
     "sign": "web-ext sign --source-dir src",
@@ -11,15 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/labsansis/garmin-workout-downloader.git"
+    "url": "git+https://github.com/gergo225/garmin-workout-stats.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/labsansis/garmin-workout-downloader/issues"
+    "url": "https://github.com/gergo225/garmin-workout-stats/issues"
   },
-  "homepage": "https://github.com/labsansis/garmin-workout-downloader#readme",
+  "homepage": "https://github.com/gergo225/garmin-workout-stats#readme",
   "devDependencies": {
-    "web-ext": "^7.6.2"
+    "web-ext": "^8.3.0"
+  },
+  "dependencies": {
+    "chrome-types": "^0.1.310"
   }
 }
