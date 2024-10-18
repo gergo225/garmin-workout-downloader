@@ -16,7 +16,7 @@
   }
 
   async function fetchActivitiesList(authHeader, pageSize, start) {
-    const url = `https://connect.garmin.com/activitylist-service/activities/search/activities?limit=${pageSize}&start=${start}`;
+    const url = `https://connect.garmin.com/activitylist-service/activities/search/activities?activityType=fitness_equipment&limit=${pageSize}&start=${start}`;
 
     const response = await fetch(url, {
       credentials: "include",
