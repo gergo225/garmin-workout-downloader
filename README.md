@@ -36,10 +36,6 @@ The downloaded JSON is pretty close to the internal Garmin Connect responses to
 some API calls, in particular Activity List and and an activiy's Exercise Sets.
 These are then joined up for one download file.
 
-If you don't know what to do with JSON files and/or are looking for a simple
-interface to explore your strength training progress, check out the
-[Workout Stats UI](https://workout.love/).
-
 # How does it work?
 
 A background script listens to Garmin Connect network calls and grabs the auth header.
