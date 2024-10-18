@@ -80,6 +80,36 @@
     return activity;
   }
 
+  function cleanActivity(activity) {
+    var cleanActivity = activity
+    
+    delete cleanActivity.activityType.isHidden
+    delete cleanActivity.activityType.trimmable
+    delete cleanActivity.activityType.restricted
+    delete cleanActivity.eventType
+    delete cleanActivity.distance
+    delete cleanActivity.averageSpeed
+    delete cleanActivity.hasPolyline
+    delete cleanActivity.hasImages
+    delete cleanActivity.ownerId
+    delete cleanActivity.ownerDisplayName
+    delete cleanActivity.userRoles
+    delete cleanActivity.privacy
+    delete cleanActivity.userPro
+    delete cleanActivity.hasVideo
+    delete cleanActivity.summarizedDiveInfo
+    delete cleanActivity.elevationCorrected
+    delete cleanActivity.favorite
+    delete cleanActivity.decoDive
+
+    for (var i = 0; i < cleanActivity.fullExerciseSets.length; ++i) {
+      delete cleanActivity.fullExerciseSets[i].wktStepIndex
+      delete cleanActivity.fullExerciseSets[i].messageIndex
+    }
+
+    return cleanActivity
+  }
+
   function downloadJsonAsFile(data, filename) {
     const dataStr =
       "data:text/json;charset=utf-8," +
@@ -124,6 +154,8 @@
         }
       }
       allActivities = allActivities.slice(0, message.numActivitiesToFetch);
+      allActivities = allActivities.map(cleanActivity);
+
       const fileName = `garmin-workouts-${new Date()
         .toISOString()
         .substring(0, 10)}_${message.numActivitiesToFetch}`;
